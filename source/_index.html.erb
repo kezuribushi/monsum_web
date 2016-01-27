@@ -1,0 +1,50 @@
+---
+title: モンサモ
+---
+
+<div class="welcome">
+  <div class="logo">
+    <%= image_tag "pathfinder_roleplaying_game.svg" %>
+  </div>
+  <h1>君の指が世界を救う</h1>
+  <p class="doc">
+    <%= link_to "Read Documentation Online", "test.rb", target: "_blank" %>
+  </p><!-- .doc -->
+</div><!-- .welcome -->
+
+
+---
+title: モンサモ Slim Examples
+---
+.welcome
+  h1.with_image 君の指が世界を救う
+
+  /! このコメントはHTMLコメントとして出力されます
+  / このコメントは出力されません
+ p.doc
+   a href="" title='あいうえお' Go
+.sample
+  h1 Slim記法サンプル
+  #content
+    p A lightweight templating engine 
+    ul#fruits
+      li りんご
+      li みかん
+    p
+      a href="http://slim-lang.com" title='Slim Homepage' Goto the Slim homepage
+    input(type="text" disabled)
+    input type="text" disabled=false
+
+    ruby:
+      months = {:Jan=>"睦月", :Feb=>"如月", :Mar=>"弥生", :Apr=>"卯月", :May=>"皐月", :Jun=>"水無月" , :July=>"文月", :Aug=>"葉月", :Sept=>"長月", :Oct=>"神無月", :Nov=>"霜月", :Dec=>"師走"}
+
+    - unless months.empty?
+      table
+        - months.each_pair do |key,value|
+          <tr><td>#{key}</td><td>#{value}</td></tr>
+
+javascript:
+  var insertElement = document.createElement("li");
+  insertElement.innerHTML = "いちご";
+  var fruits = document.getElementById("fruits");
+  fruits.appendChild(insertElement);
